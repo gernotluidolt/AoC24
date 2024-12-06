@@ -13,7 +13,7 @@ public class AoCInputFetcher {
             URL url = new URL(urlString);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
-            connection.setRequestProperty("Cookie", "session=" + Constants.SESSION);
+            connection.setRequestProperty("Cookie", "session=" + System.getenv("SESSION"));
 
             if (connection.getResponseCode() == 200) {
                 StringBuilder input = new StringBuilder();
